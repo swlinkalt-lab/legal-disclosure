@@ -1,0 +1,201 @@
+/* =========================================
+   Thais Software
+   Light Meditation Edition - Extended
+   For Legal Pages (ToS / Commerce Law)
+   ========================================= */
+
+:root {
+    --bg-main: #f7f8fb;
+    --card-bg: #ffffff;
+    --text-main: #1e2432;
+    --text-muted: #5f6b85;
+    --accent-gold: #c9b37e;
+    --accent-blue: #4a6cf7;
+    --border-soft: #e2e6f0;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 64px 20px;
+    font-family:
+        "Cormorant Garamond",
+        "Noto Serif JP",
+        "Hiragino Mincho ProN",
+        serif;
+    background: radial-gradient(circle at top, #ffffff 0%, #f1f3f9 60%);
+    color: var(--text-main);
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+}
+
+/* Layout Wrapper（拡張性確保） */
+.container {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+/* Title */
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 48px;
+    letter-spacing: 0.14em;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--accent-gold),
+            transparent);
+    margin: 18px auto 0;
+}
+
+/* Section Title（ToS用に追加） */
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 56px 0 18px;
+    color: var(--text-main);
+    letter-spacing: 0.08em;
+}
+
+/* Divider */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--border-soft),
+            transparent);
+    margin: 72px auto;
+    max-width: 640px;
+}
+
+/* Card List */
+ul {
+    list-style: none;
+    padding: 36px 40px;
+    margin: 0 auto;
+    max-width: 880px;
+    background: var(--card-bg);
+    border-radius: 18px;
+    border: 1px solid var(--border-soft);
+    box-shadow:
+        0 20px 40px rgba(30, 36, 50, 0.05),
+        0 4px 12px rgba(30, 36, 50, 0.03);
+}
+
+/* Item */
+li {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-soft);
+    transition: background 0.2s ease;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* subtle hover → UX向上 */
+li:hover {
+    background: rgba(74, 108, 247, 0.03);
+}
+
+/* Label */
+strong {
+    min-width: 240px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+}
+
+/* Content */
+li span {
+    flex: 1;
+    max-width: calc(100% - 240px);
+    line-height: 1.9;
+    word-break: break-word;
+}
+
+/* Paragraph (ToS長文用) */
+p {
+    max-width: 880px;
+    margin: 0 auto 20px;
+    color: var(--text-main);
+}
+
+/* Small text */
+.small {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Link（将来LP共通化） */
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    ul {
+        padding: 30px 28px;
+    }
+
+    strong {
+        min-width: 200px;
+    }
+
+    li span {
+        max-width: calc(100% - 200px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    body {
+        padding: 48px 14px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    ul {
+        padding: 24px 20px;
+        border-radius: 14px;
+    }
+
+    li {
+        padding: 16px 0;
+    }
+
+    strong {
+        min-width: 100%;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+    }
+
+    li span {
+        max-width: 100%;
+        font-size: 0.95rem;
+    }
+}
